@@ -3,6 +3,9 @@ interface QrResultProps {
 }
 export const QrResult = ({ url }: QrResultProps) => {
   console.log(url);
+  if (url.length == 0) {
+    alert("please enter url to generate");
+  }
   return (
     <>
       {url ? (
@@ -20,7 +23,9 @@ export const QrResult = ({ url }: QrResultProps) => {
           </div>
         </div>
       ) : (
-        <h5>not found</h5>
+        <h5 className="px-4 py-2 text-5xl font-semibold absolute top-[415px] right-[7px] MainShadow">
+          not found
+        </h5>
       )}
     </>
   );

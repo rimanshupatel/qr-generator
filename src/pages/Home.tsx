@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { QrInputBar } from "../components/QrInputBar";
 import { QrResult } from "../components/QrResult";
 
@@ -8,6 +8,10 @@ export default function Home() {
   const handleSubmit = () => {
     setUrlVal(url);
   };
+  useEffect(() => {
+    handleSubmit();
+  }, []);
+
   return (
     <>
       <QrInputBar url={url} setUrl={setUrl} handleSubmit={handleSubmit} />
